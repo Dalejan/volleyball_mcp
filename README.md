@@ -2,6 +2,10 @@
 
 Servidor MCP (Model Context Protocol) que proporciona acceso a datos de voleibol mediante consultas SQL. El proyecto incluye un proceso ETL para obtener datos de la API de VolleyballWorld y almacenarlos en una base de datos SQLite.
 
+<a href="https://glama.ai/mcp/servers/@Dalejan/volleyball_mcp">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@Dalejan/volleyball_mcp/badge" alt="Volleyball Server MCP server" />
+</a>
+
 ## Descripción
 
 Este proyecto permite consultar datos de partidos, equipos y torneos de voleibol a través de un servidor MCP. Los datos se obtienen desde la API de VolleyballWorld mediante un scraper, se convierten a formato SQLite y se exponen mediante un servidor MCP que permite ejecutar queries SQL.
@@ -115,4 +119,3 @@ Una vez configurado el servidor MCP, puedes hacer consultas como:
 ```
 'Que equipo gano mas partidos en el ano 2025'
 ```
-
