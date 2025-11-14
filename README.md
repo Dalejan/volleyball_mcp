@@ -85,9 +85,12 @@ Para usar este servidor MCP con Claude Desktop, agrega la siguiente configuraci√
 ```json
 {
   "mcpServers": {
-    "mcp-voleyball": {
-      "command": "python",
-      "args": ["/ruta/completa/a/MCP-VoleyBall/main.py"]
+    "voleyball-server": {
+      "command": "/ruta/.venv/bin/python",
+      "args": [
+        "/ruta/main.py"
+      ],
+      "cwd": "/ruta/MCP-VoleyBall" 
     }
   }
 }

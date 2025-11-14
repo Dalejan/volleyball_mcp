@@ -1,12 +1,12 @@
-from mcp.server.fastmcp import FastMCP, Context
+from mcp.server.fastmcp import FastMCP
 from db_connection import run_query
-from mcp.server.session import ServerSession
+from mcp.types import Context
 
 # Crear instancia del servidor MCP
 mcp = FastMCP("mcp-voleyball")
 
 @mcp.tool()
-async def execute_query(query: str, ctx: Context[ServerSession, None]) -> list:
+def execute_query(query: str, ctx: Context) -> list:
     """
     Ejecuta una query SQL en la base de datos de voleibol.
 
@@ -16,15 +16,9 @@ async def execute_query(query: str, ctx: Context[ServerSession, None]) -> list:
     Returns:
         Una lista de tuplas con los resultados de la query.
     """
-    try:
-        rows = run_query(query)
-        return rows
-    except Exception as e:
-        await ctx.elicit(
-            message=(f"Error executing query: {e}"),
-            schema=None,
-        )
-        return None
+    rows = run_query(query)
+    return rows
+
 if __name__ == "__main__":
     # Initialize and run the server
     mcp.run(transport='stdio')
